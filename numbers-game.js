@@ -28,7 +28,7 @@ async function getPlayerGuess() {
 }
 
 function checkGuess(guess, number) {
-  
+
   if (guess === number) {
     console.log(` Correct! The number was ${number}.`);
     return true;
@@ -39,3 +39,23 @@ function checkGuess(guess, number) {
   }
   return false;
 }
+
+async function game() {
+  const number = generateRandomNumber();
+  var attempts = 0;
+
+  for (let i = 0; i < 10; i++) {
+    attempts++;
+
+    const guess = await getPlayerGuess();
+
+    if (checkGuess(guess, number)) {
+      console.log(`You guessed the number in ${attempts} attempts!`);
+      return;
+    }
+  }
+
+  console.log(`You failed to guess the number. It was ${number}.`);
+}
+
+game();
