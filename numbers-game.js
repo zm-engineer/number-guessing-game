@@ -26,3 +26,16 @@ async function getPlayerGuess() {
 
   
 }
+
+function checkGuess(guess, number) {
+  
+  if (guess === number) {
+    console.log(` Correct! The number was ${number}.`);
+    return true;
+  } else if (guess < number) {
+    console.log(` Too low! The number is higher than ${guess}.`);
+  } else {
+    console.log(` Too high! The number is lower than ${guess}.`);
+  }
+  return false;
+}
