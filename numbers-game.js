@@ -15,6 +15,13 @@ async function getPlayerGuess() {
     }
 
     let guess = Number(input.trim());
+
+    if (isNaN(guess)) {
+      console.log(`✗ "${input}" is not a number. Try again.`);
+      await pause(1200);
+      continue;
+    }
+    
     if (!Number.isInteger(guess) || guess < 1 || guess > 100) {
       console.log(`✗ "${input}" is not a whole number from 1 to 100. Try again.`);
       await pause(1200);
