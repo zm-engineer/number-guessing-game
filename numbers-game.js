@@ -43,35 +43,35 @@ function checkGuess(guess, correctNumber) {
 
   if (diff < 0) {
     if (distance > 20) {
-      console.log("way too low");
+      console.log("Cold! try a much lower number");
       return false;
     }
     if (distance > 10) {
-      console.log("too low, but getting closer");
+      console.log("Warm! but still to low");
       return false;
     }
     if (distance > 5) {
-      console.log("a little low");
+      console.log("Hot! try a slightly lower number");
       return false;
     }
 
-    console.log("very close, just a bit low");
+    console.log("Burning hot! just a bit lower");
     return false;
   } else {
     if (distance > 20) {
-      console.log("way too high");
+      console.log("Cold! try a much higher number");
       return false;
     }
     if (distance > 10) {
-      console.log("too high, but getting closer");
+      console.log("Warm! but still too high");
       return false;
     }
     if (distance > 5) {
-      console.log("a little high");
+      console.log("Hot! try a slightly higher number");
       return false;
     }
 
-    console.log("very close, just a bit high");
+    console.log("Burning hot! just a bit higher");
     return false;
   }
 }
